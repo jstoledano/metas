@@ -3,7 +3,7 @@ version: '3.7'
 services:
   web:
     image: metas:2021.1
-    container_name: django_server
+    container_name: dj_server
     build:
       context: .
       dockerfile: django.Dockerfile

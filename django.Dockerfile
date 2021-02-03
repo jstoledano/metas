@@ -9,7 +9,7 @@ RUN apk update \
   && pip install psycopg2 \
   && apk del build-deps \
   \
-  && pip install -r requirements.txt
+  && pip install django-crispy-forms
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
