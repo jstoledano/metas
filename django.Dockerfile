@@ -7,7 +7,9 @@ RUN apk update \
   && pip install --upgrade pip \
   && pip install django \
   && pip install psycopg2 \
-  && apk del build-deps
+  && apk del build-deps \
+  \
+  && pip install -r requirements.txt
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
