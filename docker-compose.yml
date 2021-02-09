@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  web:
+  dj:
     image: metas:2021.1
     container_name: dj_server
     build:
