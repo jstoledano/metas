@@ -7,11 +7,11 @@ from profiles.models import ROLE
 def support_file(instance, file):
     import os.path
     ext = file.split('.')[-1]
-    orig = 'metas'
+    root = 'metas'
     model = instance.model
     file = '%s_soporte.%s' % (model, ext)
     goal = "%s-%s" % (instance.role.lower(), instance.key)
-    path = os.path.join(orig, instance.role.lower(), goal, file)
+    path = os.path.join(root, instance.role.lower(), goal, file)
     return path
 
 
