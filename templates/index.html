@@ -1,3 +1,6 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
 <!doctype html>
 <html lang="es-mx">
 
@@ -37,7 +40,9 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            {{ form.as_p }}
+            <form method="post" class="form">
+              {% crispy form %}
+            </form>
           </div>
         </div>
       </div>

@@ -1,8 +1,9 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import View
 from django import forms
 import json
+
+from .forms import DEA2Form
 
 
 meta = '''
@@ -24,18 +25,16 @@ meta = '''
 campos = json.loads(meta)
 
 
-class NameForm(forms.Form):
-    your_name = forms.CharField(label='Your Name', max_length=50)
-
-
 class IndexView(View):
-    form_class = NameForm
+    form_class = DEA2Form
     template_name = "index.html"
 
     def get(self, request, *args, **kwargs):
-        form = self.form_class()
+        form = self.form_class
         return render(request, self.template_name, {
-            'name':'Javier', 'campos': campos, 'form': form
+            'name': 'Javier',
+            'campos': campos,
+            'form': form
         })
 
 # TODO: Create the base template
